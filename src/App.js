@@ -1,14 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./components/login";
+import React from 'react'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
+import Logout from "./components/logout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
+      </Routes>
+    </BrowserRouter>
+  </div>
+)
 
-export default App;
+export default App

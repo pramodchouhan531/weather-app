@@ -1,0 +1,5 @@
+export const USER_LOGIN="LOGIN_PAGE"
+export const USER_USERNAME="GET_USERNAME"
+export const USER_PASSWORD="GET_PASSWORD"
+export const VALID_LOGIN="VALID_LOGIN"
+export const GET_DATA = "GET_DATA"
