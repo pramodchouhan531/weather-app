@@ -1,13 +1,23 @@
-import { USER_LOGIN,USER_USERNAME,USER_PASSWORD,VALID_LOGIN,GET_DATA} from "./actiontype"
+import { USER_LOGIN,USER_USERNAME,USER_PASSWORD,VALID_LOGIN,GET_WEATHER,GET_CITY} from "./actiontype"
 import user from '../api/user'
 
-export const getusers = (payload)=>({
-    type:GET_DATA,
-    payload
-});
+const getweather = (weather)=>{
+  return { 
+    type:GET_WEATHER,
+    weather,
 
+  }
+};
+export default getweather;
 
-export const  loginAction=(login)=>{
+export const getcity =(city)=>{
+  return{
+    type:GET_CITY,
+    city
+  }
+}
+
+export const  loginAction =(login)=>{
   return{
     type:USER_LOGIN,
     login

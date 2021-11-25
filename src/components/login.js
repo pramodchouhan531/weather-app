@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginAction, getUsername, getPassword } from '../actions/actions';
+import { logData } from '../actions/actions';
+import { useEffect } from 'react';
 
 export default function Login() {
     const navigate = useNavigate()
@@ -18,11 +20,16 @@ export default function Login() {
 
     const handleShow = () => {
         dispatch(loginAction(true));
+        
     }
-
+  
+   
     const loginValidation = (ausername, apassword) => {
+      
         if (username === ausername && password === apassword) {
-            navigate("/logout")
+           navigate("/dashboard")
+           
+         
         }
         else {
             alert("incorrect username or password")
@@ -31,6 +38,10 @@ export default function Login() {
         }
 
     }
+    useEffect(() => {
+      dispatch(logData())
+
+    }, [])
     return (
       <div>
         <h2 className="text-center">Welcome Weather</h2>
